@@ -1,0 +1,18 @@
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+        int n = nums .size();
+        int key;
+        unordered_map<int,int> u1 ;
+        
+        for(int i =0 ;i<n;i++){
+            key = target-nums[i];
+            if(u1.find(key)!=u1.end()){
+                return {u1[key],i};
+            }
+            u1[nums[i]]=i;
+        }
+        return {};
+    }
+};
+
